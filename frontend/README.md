@@ -6,21 +6,40 @@ React + TypeScript + Vite with Tailwind CSS v4 via the Vite plugin.
 
 Use Node.js 22 or later.
 
+### macOS or Linux
+
+From the repository root:
+
+```sh
+chmod +x scripts/build-local.sh
+./scripts/build-local.sh
+```
+
+### Windows
+
+From the repository root in Command Prompt:
+
+```cmd
+scripts\build-local.cmd
+```
+
+The script installs dependencies, runs TypeScript checks, builds the production bundle, and starts Vite preview at:
+
+```text
+http://localhost:4173
+```
+
+If the script reports an error, run the individual commands manually:
+
 ```sh
 cd frontend
 npm install
-npm run dev
-```
-
-## Check and build
-
-```sh
 npm run typecheck
 npm run build
 npm run preview
 ```
 
-A dependency lockfile is not included in this initial scaffold. Generate and commit package-lock.json after the first successful installation; then use npm ci for repeatable installs. Dependency installation, compilation and browser behaviour have not been verified in the authoring environment.
+A dependency lockfile is not included in this initial scaffold. The first successful run creates package-lock.json; commit it afterwards. Subsequent runs will use npm ci for repeatable installation. Dependency installation, compilation, and browser behaviour have not been verified in the authoring environment.
 
 ## Included
 
