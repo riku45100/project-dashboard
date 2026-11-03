@@ -41,6 +41,23 @@ npm run preview
 
 A dependency lockfile is not included in this initial scaffold. The first successful run creates package-lock.json; commit it afterwards. Subsequent runs will use npm ci for repeatable installation. Dependency installation, compilation, and browser behaviour have not been verified in the authoring environment.
 
+## Run tests
+
+From the `frontend` directory:
+
+```sh
+npm install
+npm test
+```
+
+For watch mode:
+
+```sh
+npm run test:watch
+```
+
+Tests use Vitest, jsdom, React Testing Library, and user-event. They cover navigation, overview statistics, Kanban status changes, project/search filters, jobs, staff, date formatting, and overdue logic. The tests use the deterministic sample data in `src/data.ts`; they do not connect to a backend or modify source files. Test execution has not been verified in the authoring environment.
+
 ## Included
 
 - Responsive dark sidebar/header and Tailwind layout.
